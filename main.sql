@@ -23,6 +23,8 @@ INSERT INTO internships values
   (' Medical Assistant Intern ', ' Comprehensive Community Health Centers ', ' Los Angeles, CA ', false, null, ' https://rb.gy/joraj4');
 
 
+---------------------------------------------------------------
+
 -- queries
 
 -- query #1
@@ -44,4 +46,19 @@ SELECT ROW_NUMBER() OVER() AS num_row,
 SELECT 'Pay Per Hour: ' AS ColumnName, payPerHr AS ColumnValue,
 * FROM internships
 WHERE NOT payPerHr IS NULL;
+.print
+
+---------------------------------------------------------------
+  
+-- sorts
+
+-- sort #1
+-- alphabetical sort
+-- tut: https://learnsql.com/cookbook/how-to-order-alphabetically-in-sql/
+.print
+.print 'Internships in Alphabetical Order by Position Name:'
+.print
+SELECT position,
+* FROM internships
+ORDER BY position ASC;
 .print
