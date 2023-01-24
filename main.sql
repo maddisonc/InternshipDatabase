@@ -31,7 +31,7 @@ INSERT INTO internships values
 -- prints entire table in numbered list, no sorting
 -- tut: https://learnsql.com/cookbook/how-to-number-rows-in-sql/
 .print
-.print 'All Internships:'
+.print 'Query #1 - All Internships:'
 .print
 SELECT ROW_NUMBER() OVER() AS num_row,
 * FROM internships;
@@ -41,11 +41,22 @@ SELECT ROW_NUMBER() OVER() AS num_row,
 -- prints paid internships with rate, no sorting
 -- tut: https://stackoverflow.com/questions/29679551/sql-select-only-non-empty-columns
 .print
-.print 'Paid Internships:'
+.print 'Query #2 - Paid Internships:'
 .print
 SELECT 'Pay Per Hour: ' AS ColumnName, payPerHr AS ColumnValue,
 * FROM internships
 WHERE NOT payPerHr IS NULL;
+.print
+
+-- query #3
+-- prints internships with deadlines
+-- tut: https://stackoverflow.com/questions/29679551/sql-select-only-non-empty-columns
+.print
+.print 'Query #3 - Internships with Deadlines:'
+.print
+SELECT 'Has application deadline: ' AS ColumnName, deadline AS ColumnValue,
+* FROM internships
+WHERE NOT deadline IS FALSE;
 .print
 
 ---------------------------------------------------------------
