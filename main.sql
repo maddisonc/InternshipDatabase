@@ -31,7 +31,7 @@ INSERT INTO internships values
 -- prints entire table in numbered list, no sorting
 -- tut: https://learnsql.com/cookbook/how-to-number-rows-in-sql/
 .print
-.print 'Query #1 - All Internships:'
+.print 'Query #1 - All Internships in Numbered List:'
 .print
 SELECT ROW_NUMBER() OVER() AS num_row,
 * FROM internships;
@@ -62,14 +62,27 @@ WHERE NOT deadline IS FALSE;
 ---------------------------------------------------------------
   
 -- sorts
-
+.print
+.print '---------------------------------------------------------------'
+.print
+  
 -- sort #1
 -- alphabetical sort
 -- tut: https://learnsql.com/cookbook/how-to-order-alphabetically-in-sql/
 .print
-.print 'Internships in Alphabetical Order by Position Name:'
+.print 'Sort #1 - Internships in Alphabetical Order by Position Name:'
 .print
 SELECT position,
 * FROM internships
 ORDER BY position ASC;
+.print
+
+-- sort #2
+-- alphabetical sort
+.print
+.print 'Sort #2 - Internships in Alphabetical Order by City Name:'
+.print
+SELECT 'Location: ' AS ColumnName, location AS ColumnValue,
+* FROM internships
+ORDER BY location ASC; 
 .print
